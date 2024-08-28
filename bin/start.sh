@@ -1,6 +1,11 @@
 #!/bin/sh
 
-apify actor get-input | apify actor push-data
+echo "Getting input"
+input=$(apify actor get-input) 
+echo "Input: $input"
 
-echo "All OK."
+echo "Pushing data"
+echo $input | apify actor push-data
+
+echo "This is the end."
 
